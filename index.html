@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+    <!-- Navbar Section -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary shadow">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">SmartHomeX</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+                aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#"> <i class="bi bi-lightning-fill">
+                                Features</i></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"> <i class="bi bi-exclamation-circle"> How it Works</i></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="bi bi-currency-dollar"> Pricing</i></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"> <i class="bi bi-envelope"> contact</i> </a>
+                    </li>
+                </ul>
+                <button class=" text-white text-center start">
+                    Get Started
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Body section -->
+
+    <div class="main">
+
+
+        <h1 class="head">Smarter Living Starts Here</h1>
+        <p class="head">Enhance our homes connecuviv and entertainment with our all-in-one smart amton devic .</p>
+
+        <button class=" text-white text-center b1">Shop Now</button>
+        <button class="bg-body-tertiary text-center b2 text-primary">Learn More</button>
+
+        <img src="image/home.jpg" alt="" class=" ">
+
+
+        <!-- Features section -->
+        <div class="features">
+            <div class="h3">
+
+                <h3>Key Features</h3>
+            </div>
+
+            <div class="">
+                <div class="row">
+                  <div class="col-12 col-md-4 fea">
+                    <i class="bi bi-wifi"></i>
+                    <h5>Seamless Connectivity</h5>
+                    <p>Connect all your smart devices effortlessly and control them from one hub.</p>
+                  </div>
+                  <div class="col-12 col-md-4 fea">
+                    <i class="bi bi-music-note"></i>
+                    <h5>Entertainment Hub</h5>
+                    <p>Stream music, movies, and more with integrated entertainmont features.</p>
+                  </div>
+                  <div class="col-12 col-md-4 fea">
+                    <i class="bi bi-shield-shaded"></i>
+                    <h5>Enhanced Security</h5>
+                    <p>Monitor and secure your home with real-time alerts and automation.</p>
+                  </div>
+                </div>
+              </div>
+              
+        </div>
+
+
+        <!-- How it works Section -->
+        <div class="work">
+            <h3>How it Works</h3>
+            <div class="container text-start">
+                <div class="row">
+                    <div class="col-12 col-md-4">
+                        <i class="bi bi-plug-fill"></i>
+                        <h5>Plug & Play Setup</h5>
+                        <p>Easy instatation with step-by- step queance.</p>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <i class="bi bi-phone"></i>
+                        <h5>App control</h5>
+                        <p>Manage everything from your phone.</p>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <i class="bi bi-mic-fill"></i>
+                        <h5>Voice Asistant</h5>
+                        <p>WORKS with Alexa,Google, and siri.</p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <!-- Entartainment insight section -->
+
+        <div>
+            <h2>Entartainment insights</h2>
+            <div class="container my-5">
+                <div class="card ">
+                    <!-- <div class="card-header bg-primary text-white">
+                Monthly Revenue
+              </div> -->
+                    <div class="card-body">
+                        <canvas id="barChart" height="100"></canvas>
+                    </div>
+                </div>
+                <h3>Ready To Upgrade?</h3>
+                <button>Get Started</button>
+            </div>
+
+
+        </div>
+
+        <!-- this script if for the bar chart -->
+        <script>
+            const ctx = document.getElementById('barChart').getContext('2d');
+            const barChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['Music', 'Movie', 'Podcast', 'Games', 'TV', 'Radio'],
+                    datasets: [{
+                        label: 'Revenue',
+                        data: [3000, 2800, 2200, 1700, 2800, 1500],
+                        backgroundColor: '#0f0f0f', // Bootstrap primary
+                        borderRadius: 5,
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            display: true
+                        }
+                    }
+                }
+            });
+        </script>
+        <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script> -->
+</body>
+
+</html>
